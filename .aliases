@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+alias L='ls -lt'
+alias X='exit'
+alias chtitle='echo -n -e "\033]0;$(basename ${PWD})\007"'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
