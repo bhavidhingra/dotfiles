@@ -1,53 +1,53 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Bhavi Dhingra
-    email = bhavi.dhingra1@swiggy.in
+  name = Bhavi Dhingra
+  email = bhavi.dhingra1@swiggy.in
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-    required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [core]
-	excludesfile = /Users/bhavi.dhingra1/.gitignore_global
-    symlinks = false
-	pager = delta
+  excludesfile = /Users/bhavi.dhingra1/.gitignore_global
+  symlinks = false
+  pager = delta
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [commit]
-    template = /Users/bhavi.dhingra1/.stCommitMsg
+  template = /Users/bhavi.dhingra1/.stCommitMsg
 
 [merge]
-    tool = vscode
+  tool = vscode
 
 [mergetool "vscode"]
-    cmd = code --wait $MERGED 
-    trustExitCode = true
+  cmd = code --wait $MERGED 
+  trustExitCode = true
 
 [url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
+  insteadOf = https://bitbucket.org/
 
 [diff]
-	submodule = log
+  submodule = log
 
 [include]
-    path = /Users/bhavi.dhingra1/.gitalias
+  path = /Users/bhavi.dhingra1/.gitalias
 
 [delta]
-	navigate = true
-	syntax-theme = GitHub
-	whitespace-error-style = red reverse
-	commit-decoration-style = blue box ul
-	line-numbers = true
-	file-style = blue bold ul
-    file-decoration-style = none
+  navigate = true
+  syntax-theme = GitHub
+  whitespace-error-style = red reverse
+  commit-decoration-style = blue box ul
+  line-numbers = true
+  file-style = blue bold ul
+  file-decoration-style = none
 
 [color "diff"]
-	commit = blue
+  commit = blue
 [url "git@github.com:swiggy-private/"]
-	insteadOf = https://github.com/swiggy-private/
+  insteadOf = https://github.com/swiggy-private/
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
