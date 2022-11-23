@@ -41,3 +41,5 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go-workspace
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
