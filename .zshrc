@@ -62,7 +62,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bhavi.dhingra1/.oh-my-zsh"
+export ZSH="/Users/neetidhingra/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -173,7 +173,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
-#. /Users/bhavi.dhingra1/Library/Python/3.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+#. /Users/neetidhingra/Library/Python/3.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 #source ~/.zplug/init.zsh
 
@@ -188,7 +188,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Then, source plugins and add commands to $PATH
 #zplug load --verbose
 
-# source /Users/bhavi.dhingra1/.config/broot/launcher/bash/br
+# source /Users/neetidhingra/.config/broot/launcher/bash/br
 
 echo -n -e "\033]0;$(basename ${PWD})\007"
 # echo -n -e "\033]0;custom-git\007"
