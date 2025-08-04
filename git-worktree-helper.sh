@@ -61,7 +61,7 @@ wt() {
     fi
 
     # List of hidden directories to copy
-    local hidden_dirs=(".claude" ".cursor")
+    local hidden_dirs=(".claude" ".cursor" ".serena")
 
     # Copy hidden directories if they exist
     for dir_name in "${hidden_dirs[@]}"; do
@@ -71,7 +71,7 @@ wt() {
         fi
     done
 
-    # Navigate to the new worktree
+    newtab
     cd "${worktree_dir}"
 
     # Open in Cursor if available
