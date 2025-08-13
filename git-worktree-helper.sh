@@ -60,28 +60,9 @@ wt() {
         echo "✓ Copied .env file to worktree"
     fi
 
-    # List of hidden directories to copy
-    local hidden_dirs=(".claude" ".cursor" ".serena")
-
-    # Copy hidden directories if they exist
-    for dir_name in "${hidden_dirs[@]}"; do
-        if [ -d "${repo_root}/${dir_name}" ]; then
-            cp -R "${repo_root}/${dir_name}" "${worktree_dir}/${dir_name}"
-            echo "✓ Copied ${dir_name} directory to worktree"
-        fi
-    done
-
-    newtab
     cd "${worktree_dir}"
-
-    # Open in Cursor if available
-    if command -v cursor &> /dev/null; then
-        cursor "${worktree_dir}" &
-        echo "✓ Opening worktree in Cursor editor"
-    elif command -v code &> /dev/null; then
-        code "${worktree_dir}" &
-        echo "✓ Opening worktree in VS Code"
-    fi
+    newtab
+    cd -
 
     # Success message
     echo ""
