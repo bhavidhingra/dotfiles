@@ -61,8 +61,6 @@ wt() {
     fi
 
     cd "${worktree_dir}"
-    newtab
-    cd -
 
     # Success message
     echo ""
@@ -73,6 +71,8 @@ wt() {
 
     # Show current directory
     echo "📍 Current directory: $(pwd)"
+
+    npm install --legacy-peer-deps
 }
 
 # Helper function to list all worktrees for the current repository

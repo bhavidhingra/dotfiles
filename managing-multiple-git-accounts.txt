@@ -1,0 +1,59 @@
+Managing Multiple Accounts
+
+If you need to use your old account (bhavidhingra) for specific repos:
+git remote set-url origin git@github.com-bhavidhingra:username/repo.git
+
+For new repos with your new account (default):
+git remote set-url origin git@github.com:bhavidhingraa/repo.git
+
+If you need to switch between accounts, use:
+- ssh-add ~/.ssh/id_ed25519_bhavidhingraa for new account
+- ssh-add ~/.ssh/id_ed25519 for old account
+
+
+For NEW account (bhavidhingraa) - Default:
+
+  # Regular push (uses default github.com host)
+  git push origin main
+
+  For OLD account (bhavidhingra) repositories:
+
+  You need to update the remote URL to use the special host:
+
+  # Check current remote
+  git remote -v
+
+  # Change remote to use old account host
+  git remote set-url origin git@github.com-bhavidhingra:bhavidhingra/repo-name.git
+
+  # Then push normally
+  git push origin main
+
+  Example scenarios:
+
+  Working on UnpluggedDev/magicpath (old account):
+
+  cd /Users/neetidhingra/Github/UnpluggedDev/magicpath/unpluggeddev-frontend
+  git remote set-url origin git@github.com-bhavidhingra:UnpluggedDev/magicpath.git
+  git push origin main
+
+  Working on UnpluggedDevv/frontend (new account):
+
+  cd /Users/neetidhingra/Github/bhavidhingraa/UnpluggedDevv/frontend
+  # Already uses default, just push
+  git push origin main
+
+  Quick check which account will be used:
+
+  git remote -v
+  # If it shows: git@github.com:... → uses bhavidhingraa (new)
+  # If it shows: git@github.com-bhavidhingra:... → uses bhavidhingra (old)
+
+  Per-repository Git config (optional):
+
+  Set different user for specific repos:
+  # In a specific repo, override global config
+  git config user.name "Bhavi Dhingra"
+  git config user.email "bhavi.dhingra@gmail.com"
+
+  The SSH config I set up handles authentication, so you don't need ssh-add -D each time!
