@@ -218,6 +218,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Added on Nov 28, 2025 (Valid for 1 year)
-export CLAUDE_CODE_OAUTH_TOKEN="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"
