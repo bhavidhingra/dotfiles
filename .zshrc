@@ -225,9 +225,9 @@ export NVM_DIR="$HOME/.nvm"
 encrypt() { gpg -e -a -r "${2:-me}" -o "$1.asc" "$1"; }
 # decrypt file.asc [out]: writes the decrypted file (default: name without .asc/.gpg)
 decrypt() { local out="${2:-${1%.(asc|gpg)}}"; gpg --pinentry-mode loopback -o "$out" -d "$1" && echo "saved $out"; }
-# enctext [alias] [file]: type text, Enter, Ctrl+D, then it saves to file (default msg.asc)
+# encrypttext [alias] [file]: type text, Enter, Ctrl+D, then it saves to file (default msg.asc)
 encrypttext() { gpg -e -a -r "${1:-me}" -o "${2:-msg.asc}" && echo "saved ${2:-msg.asc}"; }
-# decrypt pasted text: dectext, then paste the whole BEGIN/END PGP MESSAGE block, Enter, Ctrl+D
+# decrypt pasted text: decrypttext, then paste the whole BEGIN/END PGP MESSAGE block, Enter, Ctrl+D
 decrypttext() { gpg --pinentry-mode loopback -d; }
 
 # ❯ cat ~/.gnupg/gpg.conf
