@@ -219,11 +219,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# encrypt for someone (defaults to you): enc file [email]
-enc() { gpg -e -a -r "${2:-bhavi.dhingra@gmail.com}" -o "$1.asc" "$1"; }
-# decrypt: dec file.asc
-dec() { gpg --pinentry-mode loopback -d "$1"; }
-# encrypt typed text: enctext [email], then type, Enter, Ctrl+D
-enctext() { gpg -e -a -r "${1:-bhavi.dhingra@gmail.com}"; }
+########### GPG START ##################
+
+# encrypt for someone (defaults to you): encrypt file [alias]
+encrypt() { gpg -e -a -r "${2:-me}" -o "$1.asc" "$1"; }
+# decrypt file.asc [out]: writes the decrypted file (default: name without .asc/.gpg)
+decrypt() { local out="${2:-${1%.(asc|gpg)}}"; gpg --pinentry-mode loopback -o "$out" -d "$1" && echo "saved $out"; }
+# enctext [alias] [file]: type text, Enter, Ctrl+D, then it saves to file (default msg.asc)
+encrypttext() { gpg -e -a -r "${1:-me}" -o "${2:-msg.asc}" && echo "saved ${2:-msg.asc}"; }
 # decrypt pasted text: dectext, then paste the whole BEGIN/END PGP MESSAGE block, Enter, Ctrl+D
-dectext() { gpg --pinentry-mode loopback -d; }
+decrypttext() { gpg --pinentry-mode loopback -d; }
+
+# ❯ cat ~/.gnupg/gpg.conf
+#auto-key-retrieve
+#no-emit-version
+
+#group ankit = 4F3B343B96E4AE755228CB6E12543FBEA1CAFE06
+#group me = 007B70F83375A501006738DE944A60926E256FF8
+
+############# GPG END ##################
