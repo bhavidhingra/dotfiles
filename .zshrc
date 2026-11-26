@@ -218,3 +218,12 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# encrypt for someone (defaults to you): enc file [email]
+enc() { gpg -e -a -r "${2:-bhavi.dhingra@gmail.com}" -o "$1.asc" "$1"; }
+# decrypt: dec file.asc
+dec() { gpg --pinentry-mode loopback -d "$1"; }
+# encrypt typed text: enctext [email], then type, Enter, Ctrl+D
+enctext() { gpg -e -a -r "${1:-bhavi.dhingra@gmail.com}"; }
+# decrypt pasted text: dectext, then paste the whole BEGIN/END PGP MESSAGE block, Enter, Ctrl+D
+dectext() { gpg --pinentry-mode loopback -d; }
